@@ -104,7 +104,7 @@ func merge(v1 int, v2 string) string {
 }
 
 func markdown(v string) string {
-	return string(blackfriday.Run([]byte(v)))
+	return string(blackfriday.Run([]byte(strings.ReplaceAll(v, "\r\n", "\n"))))
 }
 
 func dateTime() string {
